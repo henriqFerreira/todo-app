@@ -3,24 +3,26 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView, StatusBar } from "rea
 
 {/* Import dos componentes */}
 import Task from "../components/Tasks"
+import DrawerButton from "../components/drawerButton";
 
 const HomeScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <View style={ styles.container }>
-                <ScrollView>
+            <StatusBar backgroundColor={"#EDF2FB"} barStyle="dark-content" />
+            <DrawerButton/>
+            <ScrollView>
+                <View style={ styles.container }>
                     <View>
                         {/* Título da seção */}
                         <Text style={ styles.title }>Tarefas de hoje</Text>
                         {/* Container que terá todas as tasks, (hoje) */}
                         <View style={ styles.tasksContainer }>
                             {/* Cada task será inserida aqui */}
-                            <Task />
+                            <Task/>
                         </View>
                     </View>
-                </ScrollView>
-            </View>
-            <StatusBar backgroundColor={"#EDF2FB"} barStyle="dark-content" />
+                </View>
+            </ScrollView>
         </SafeAreaView>
     )
 }

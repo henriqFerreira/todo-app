@@ -1,10 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
 const Task = () => {
     return (
         <View style={ styles.taskContainer }>
-            <Text style={ styles.taskTitle }>task</Text>
+            <View style={ styles.leftContent }>
+                <TouchableOpacity style={ styles.taskCheckbox } ></TouchableOpacity>
+                <Text style={ styles.taskTitle }>Lorem ipsum dolor sit amet</Text>
+            </View>
+            <Image source={ require('../assets/Order-button.png') } />
         </View>
     )
 }
@@ -23,11 +27,33 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         elevation: 5,
         borderRadius: 15,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+    leftContent: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'center'
+    },
+    taskCheckbox: {
+        width: 20,
+        height: 20,
+        borderRadius: 5,
+        marginRight: 10,
+        backgroundColor: '#ABC4FF'
     },
     taskTitle: {
+        maxWidth: '85%',
         fontSize: 14,
-    }
+    },
+    taskReorder: {
+        width: 20,
+        height: 20,
+        borderRadius: 5,
+        backgroundColor: '#ABC4FF'
+    },
 });
 
 export default Task;
