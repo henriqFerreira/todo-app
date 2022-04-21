@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 
-const Task = () => {
+const Task = (props) => {
     return (
         <View style={ styles.taskContainer }>
             <View style={ styles.leftContent }>
-                <TouchableOpacity style={ styles.taskCheckbox } ></TouchableOpacity>
-                <Text style={ styles.taskTitle }>Lorem ipsum dolor sit amet</Text>
+                <TouchableOpacity style={ styles.taskCheckbox }></TouchableOpacity>
+                <Text style={ styles.taskTitle }>{props.text}</Text>
             </View>
             <Image source={ require('../assets/Order-button.png') } />
         </View>
@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
         height: 20,
         borderRadius: 5,
         marginRight: 10,
-        backgroundColor: '#ABC4FF'
     },
     taskTitle: {
         maxWidth: '85%',
