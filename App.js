@@ -15,8 +15,12 @@ export default function App() {
 				<Drawer.Navigator
 					initialRouteName='Home'
 					screenOptions={{
-						drawerType: 'front',
-						headerShown: false
+						drawerType: 'slide',
+						headerShown: false,
+						drawerStyle: {
+							borderRightWidth: 3,
+							borderRightColor: '#ABC2FF'
+						}
 					}}
 					>
 					<Drawer.Screen name='Home' component={HomeScreen} />
